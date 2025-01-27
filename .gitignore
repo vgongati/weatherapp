@@ -1,0 +1,64 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+*.xcworkspace
+*.xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData/
+.idea/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Certificates
+*.p12
+*.mobileprovision
+*.provisionprofile
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+
+# Environment variables
+.env
+
+# Other
+*.orig
+
+# Build artifacts
+*.o
+*.link
+*.d
+
+# Thumbnails
+._*
+
+# Personal settings
+*.swm
+*.scc
+*.sln.docstates
+
