@@ -14,9 +14,9 @@ class WeatherService {
     private let baseURL = "https://api.weatherapi.com/v1/current.json"
 
     func fetchWeather(for city: String) -> AnyPublisher<Weather, Error> {
-        
-        guard let url = URL(string: "\(baseURL)?key=\(apiKey)&q=\(city)&aqi=no") else {
-            
+        // Encode the city name to handle spaces and special characters
+        guard let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: "\(baseURL)?key=\(apiKey)&q=\(encodedCity)&aqi=no") else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
 
