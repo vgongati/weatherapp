@@ -8,15 +8,20 @@
 import Foundation
 import Combine
 
-class WeatherService {
-    
+protocol WeatherServiceProtocol {
+
+    func fetchWeather(for city: String) -> AnyPublisher<Weather, Error>
+}
+
+class WeatherService: WeatherServiceProtocol {
+
     private let apiKey = "82b97f67b9b0457f98c220931252601" // Replace with your actual API key
     private let baseURL = "https://api.weatherapi.com/v1/current.json"
 
     func fetchWeather(for city: String) -> AnyPublisher<Weather, Error> {
-        // Encode the city name to handle spaces and special characters
-        guard let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let url = URL(string: "\(baseURL)?key=\(apiKey)&q=\(encodedCity)&aqi=no") else {
+
+        guard let url = URL(string: "\(baseURL)?key=\(apiKey)&q=\(city)&aqi=no") else {
+
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
 
@@ -35,8 +40,8 @@ struct WeatherCondition: Codable {
     let icon: String
 }
 
-struct Weather: Codable {
-    
+struct Weather: Codable, Equatable {
+
     let tempC: Double
     let condition: WeatherCondition
     let windKph: Double
@@ -44,12 +49,20 @@ struct Weather: Codable {
     let feelsLikeC: Double
 
     enum CodingKeys: String, CodingKey {
-        
+
         case tempC = "temp_c"
         case condition
         case windKph = "wind_kph"
         case humidity
         case feelsLikeC = "feelslike_c"
+    }
+
+    static func == (lhs: Weather, rhs: Weather) -> Bool {
+
+        return lhs.tempC == rhs.tempC &&
+            lhs.windKph == rhs.windKph &&
+            lhs.humidity == rhs.humidity &&
+            lhs.feelsLikeC == rhs.feelsLikeC
     }
 }
 

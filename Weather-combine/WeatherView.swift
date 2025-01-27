@@ -9,19 +9,16 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    @StateObject private var viewModel = WeatherViewModel()
+    @StateObject private var viewModel = WeatherViewModel(weatherService: WeatherService())
     @State private var city: String = "San Francisco"
 
     var body: some View {
-        
         VStack(spacing: 20) {
-            
             TextField("Enter city", text: $city)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
             if let weather = viewModel.weather {
-                
                 Text("Temperature: \(weather.tempC, specifier: "%.1f")°C")
                     .font(.largeTitle)
                 Text(weather.condition.text)
@@ -30,39 +27,20 @@ struct WeatherView: View {
                 Text("Wind: \(weather.windKph, specifier: "%.1f") kph")
                 Text("Humidity: \(weather.humidity)%")
             } else if let errorMessage = viewModel.errorMessage {
-                
                 Text(errorMessage)
                     .foregroundColor(.red)
-            } else {
-                
-                Text("Loading...")
             }
 
             Button("Fetch Weather") {
-                
                 viewModel.fetchWeather(for: city)
             }
             .buttonStyle(.borderedProminent)
         }
         .padding()
+        .loader(viewModel.isLoading)
         .onAppear {
-            
             viewModel.fetchWeather(for: city)
         }
-    }
-}
-
-public extension View {
-    
-    func fullBackground(imageName: String) -> some View {
-        
-       return background(
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-       )
     }
 }
 
