@@ -12,6 +12,7 @@ struct ContentView: View {
         VStack {
             WeatherView()
         }
+        .fullBackground(imageName: "BG")
         .padding()
     }
 }

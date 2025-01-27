@@ -52,6 +52,20 @@ struct WeatherView: View {
     }
 }
 
+public extension View {
+    
+    func fullBackground(imageName: String) -> some View {
+        
+       return background(
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+       )
+    }
+}
+
 struct WeatherView_Previews: PreviewProvider {
     
     static var previews: some View {
