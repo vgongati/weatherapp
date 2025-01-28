@@ -21,6 +21,8 @@
 		2732D1782D476FA60077D105 /* CommonModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732D1772D476FA50077D105 /* CommonModifiers.swift */; };
 		2732D17A2D4772240077D105 /* MockWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732D1792D4772240077D105 /* MockWeatherService.swift */; };
 		2732D17C2D4772D60077D105 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732D17B2D4772D60077D105 /* WeatherViewModelTests.swift */; };
+		2732D17E2D485B7C0077D105 /* CityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732D17D2D485B7C0077D105 /* CityCardView.swift */; };
+		2732D1802D485EDF0077D105 /* CityCardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732D17F2D485EDF0077D105 /* CityCardView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		2732D1772D476FA50077D105 /* CommonModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModifiers.swift; sourceTree = "<group>"; };
 		2732D1792D4772240077D105 /* MockWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherService.swift; sourceTree = "<group>"; };
 		2732D17B2D4772D60077D105 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
+		2732D17D2D485B7C0077D105 /* CityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardView.swift; sourceTree = "<group>"; };
+		2732D17F2D485EDF0077D105 /* CityCardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				2732D1482D46E63B0077D105 /* Weather_combine.entitlements */,
 				2732D1492D46E63B0077D105 /* Preview Content */,
 				2732D16D2D46E6B40077D105 /* WeatherView.swift */,
+				2732D17D2D485B7C0077D105 /* CityCardView.swift */,
+				2732D17F2D485EDF0077D105 /* CityCardView2.swift */,
 				2732D1712D46E70E0077D105 /* WeatherService.swift */,
 				2732D16F2D46E6E60077D105 /* WeatherViewModel.swift */,
 				2732D1792D4772240077D105 /* MockWeatherService.swift */,
@@ -304,6 +310,8 @@
 				2732D1432D46E6380077D105 /* Weather_combineApp.swift in Sources */,
 				2732D17A2D4772240077D105 /* MockWeatherService.swift in Sources */,
 				2732D1722D46E70E0077D105 /* WeatherService.swift in Sources */,
+				2732D1802D485EDF0077D105 /* CityCardView2.swift in Sources */,
+				2732D17E2D485B7C0077D105 /* CityCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
